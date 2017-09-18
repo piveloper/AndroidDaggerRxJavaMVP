@@ -13,6 +13,6 @@ public interface SplashContract {
         void openDrawerActivity();
     }
     interface Presenter<V extends SplashContract.View> extends BaseContract.Presenter<V>{
-
+        void decideNextActivity();
     }
 }

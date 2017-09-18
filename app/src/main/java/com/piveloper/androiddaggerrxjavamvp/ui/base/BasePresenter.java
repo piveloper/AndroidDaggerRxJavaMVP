@@ -30,4 +30,8 @@ public class BasePresenter<V extends BaseContract.View>
     public void setUserAsLoggedOut() {
 
     }
+
+    public V getmView() {
+        return mView;
+    }
 }

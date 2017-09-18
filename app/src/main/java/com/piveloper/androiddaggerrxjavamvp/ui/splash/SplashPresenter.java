@@ -18,4 +18,8 @@ public class SplashPresenter<V extends SplashContract.View> extends BasePresente
     }
 
 
+    @Override
+    public void decideNextActivity() {
+        getmView().openLoginAcitivity();
+    }
 }
