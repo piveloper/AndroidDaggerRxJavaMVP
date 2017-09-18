@@ -17,6 +17,10 @@ public class AppController extends Application {
     @Inject
     DataManager mDataManager;
 
+    public ApplicationComponent getApplicationComponent() {
+        return mApplicationComponent;
+    }
+
     private ApplicationComponent mApplicationComponent;
 
     @Override
@@ -26,4 +30,6 @@ public class AppController extends Application {
                 .applicationModule(new ApplicationModule(this)).build();
         mApplicationComponent.inject(this);
     }
+
+
 }

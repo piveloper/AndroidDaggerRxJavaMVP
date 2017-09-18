@@ -23,7 +23,7 @@ public class BasePresenter<V extends BaseContract.View>
 
     @Override
     public void detachView() {
-
+        mView = null;
     }
 
     @Override
