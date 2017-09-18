@@ -12,11 +12,13 @@ This project serves as an architecture template for developing my apps. As I am 
   - **L**iskov substitution principle: *Instances of parents classes should be replaceable with instances of their childs.*
   - **I**nterface segregation principle: *Many client-specific interfaces are better than one general-purpose interface.*
   - **D**ependency inversion principle: *High-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details. Details should depend on abstractions.*
+ - Apply TDD (Test Driven Devlopment)
 
 ## Libraries used
 - Dagger 2 for dependency injection
 - RxJava
 - Butterknife
+- Mockito for making tests using less code
 
 ## Sources
 - https://github.com/MindorksOpenSource/android-mvp-architecture
