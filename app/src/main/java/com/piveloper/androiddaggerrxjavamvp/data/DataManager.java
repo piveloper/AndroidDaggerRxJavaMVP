@@ -5,4 +5,5 @@ package com.piveloper.androiddaggerrxjavamvp.data;
  */
 
 public interface DataManager {
+
 }
