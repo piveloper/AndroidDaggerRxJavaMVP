@@ -17,17 +17,17 @@ public class BasePresenter<V extends BaseContract.View>
     }
 
     @Override
-    public void attachView(V view) {
+    public void onViewAttached(V view) {
         mView = view;
     }
 
     @Override
-    public void detachView() {
+    public void onViewDetached() {
         mView = null;
     }
 
     @Override
-    public void setUserAsLoggedOut() {
+    public void onUserSetAsLoggedOut() {
 
     }
 

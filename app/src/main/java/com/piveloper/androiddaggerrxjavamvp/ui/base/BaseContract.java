@@ -15,10 +15,10 @@ public interface BaseContract {
         void hideLoading();
     }
     interface Presenter<V extends BaseContract.View>{
-        void attachView(V view);
+        void onViewAttached(V view);
 
-        void detachView();
+        void onViewDetached();
 
-        void setUserAsLoggedOut();
+        void onUserSetAsLoggedOut();
     }
 }

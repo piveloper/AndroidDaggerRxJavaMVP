@@ -20,7 +20,7 @@ public class SplashActivity extends BaseActivity implements SplashContract.View 
 
         getActivityComponent().inject(this);
 
-        mPresenter.attachView(SplashActivity.this);
+        mPresenter.onViewAttached(SplashActivity.this);
         mPresenter.decideNextActivity();
     }
 
@@ -37,7 +37,7 @@ public class SplashActivity extends BaseActivity implements SplashContract.View 
 
     @Override
     protected void onDestroy() {
-        mPresenter.detachView();
+        mPresenter.onViewDetached();
         super.onDestroy();
     }
 }
