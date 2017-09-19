@@ -8,9 +8,9 @@ import com.piveloper.androiddaggerrxjavamvp.ui.base.BaseContract;
 
 public interface LoginContract {
     interface View extends BaseContract.View{
-
+        void openDrawerActivity();
     }
     interface Presenter<V extends LoginContract.View> extends BaseContract.Presenter<V>{
-
+        void onLoginClicked(String title, String password);
     }
 }

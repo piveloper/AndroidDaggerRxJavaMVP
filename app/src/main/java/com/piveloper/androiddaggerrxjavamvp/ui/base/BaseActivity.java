@@ -9,18 +9,22 @@ import com.piveloper.androiddaggerrxjavamvp.di.components.ActivityComponent;
 import com.piveloper.androiddaggerrxjavamvp.di.components.DaggerActivityComponent;
 import com.piveloper.androiddaggerrxjavamvp.di.modules.ActivityModule;
 
+import butterknife.Unbinder;
+
 /**
  * Created by P.Mohr on 18.09.2017.
  */
 
 public class BaseActivity extends AppCompatActivity implements BaseContract.View {
 
-    private ActivityComponent mActivityComponent;
+    private ActivityComponent activityComponent;
+    private Unbinder unBinder;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mActivityComponent = DaggerActivityComponent.builder()
+        activityComponent = DaggerActivityComponent.builder()
                 .activityModule(new ActivityModule(this))
                 .applicationComponent(((AppController) getApplication()).getApplicationComponent())
                 .build();
@@ -47,6 +51,18 @@ public class BaseActivity extends AppCompatActivity implements BaseContract.View
     }
 
     public ActivityComponent getActivityComponent() {
-        return mActivityComponent;
+        return activityComponent;
+    }
+
+    public void setUnBinder(Unbinder unBinder) {
+        this.unBinder = unBinder;
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(unBinder != null){
+            unBinder.unbind();
+        }
+        super.onDestroy();
     }
 }

@@ -3,6 +3,7 @@ package com.piveloper.androiddaggerrxjavamvp.ui.splash;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.piveloper.androiddaggerrxjavamvp.di.qualifier.LoginIntent;
 import com.piveloper.androiddaggerrxjavamvp.ui.base.BaseActivity;
 
 import javax.inject.Inject;
@@ -12,6 +13,7 @@ public class SplashActivity extends BaseActivity implements SplashContract.View 
     SplashContract.Presenter<SplashContract.View> mPresenter;
 
     @Inject
+    @LoginIntent
     Intent mStartLoginActivity;
 
     @Override
